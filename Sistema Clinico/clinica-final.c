@@ -1,17 +1,17 @@
 /*---------------------------------------------------------------------
 Uninorte
-Sistemas de InformaÁ„o 2o periodo
-Equipe: Denis, Wylkson M. Barbosa, Stanley, Rodrigo
-Data inÌcio:04/11/2017
-Data modificaÁ„o 1: 05/11/2017
-Data modificaÁ„o 2: 06/11/2017
+Sistemas de Informa√ß√£o 2o periodo
+Equipe: Wylkson M. Barbosa
+Data in√≠cio:04/11/2017
+Data modifica√ß√£o 1: 05/11/2017
+Data modifica√ß√£o 2: 06/11/2017
 Matricula: 17181500
 ------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------
-Descricao: Utilize as informaÁıes a seguir para criar um controle automatizado de uma clÌnica mÈdia.
-Sabe-se que essa clÌnica deseja ter um controle semanal (2a a 6a feira) das consultas realizadas. A cada
-dia podem ser realizadas no m·ximo duas consultas para cada mÈdico. Considere que s„o cadastrados
-apenas 3 mÈdicos e 5 pacientes.
+Descricao: Utilize as informa√ß√µes a seguir para criar um controle automatizado de uma cl√≠nica m√©dia.
+Sabe-se que essa cl√≠nica deseja ter um controle semanal (2a a 6a feira) das consultas realizadas. A cada
+dia podem ser realizadas no m√°ximo duas consultas para cada m√©dico. Considere que s√£o cadastrados
+apenas 3 m√©dicos e 5 pacientes.
 ------------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,7 +24,7 @@ int num2=0; //para cadastro consulta
 int num3=0; //para cadastro medico
 int i;//contadora for
 int j;//contadora for
-#define tam_vetor 3 //variavel definida = constante = n„o alter·vel
+#define tam_vetor 3 //variavel definida = constante = n√£o alter√°vel
 
 //-------------VARIAVEIS DE CONT DOS VETORES DA STRUCT DIAS{seg,ter,qua,qui,sex}------------
 
@@ -73,7 +73,7 @@ struct CONSULTA consulta[30];
 //-----------FUNCAO CADASTRA PACIENTE NOVO
 void cadastro_paciente()
 {
-    paciente[num].cod_cliente = num; //Recebe cÛdigo atual
+    paciente[num].cod_cliente = num; //Recebe c√≥digo atual
     //-----------LEITURA DO NOME DO PACIENTE-------------
     puts("\nDigite o nome do cliente a ser cadastrado: ");
     fgets(paciente[num].nome,60, stdin);
@@ -85,7 +85,7 @@ void cadastro_paciente()
     fflush(stdin);
 
 //leituta do endereco do paciente
-    puts("\nDigite o endereÁo do paciente: ");
+    puts("\nDigite o endere√ßo do paciente: ");
     gets(paciente[num].endereco);
     num++;
     fflush(stdin);
@@ -140,18 +140,18 @@ void cadastro_consulta()
         fflush(stdin);//Limpa Buffer do teclado
         for (i=0; i<num; i++)     //pode dar errado
         {
-            if (consulta[num2].cod_paciente==paciente[i].cod_cliente) //Verifica se codigo informado pelo usuario È existente nos cadastrados atualmente
+            if (consulta[num2].cod_paciente==paciente[i].cod_cliente) //Verifica se codigo informado pelo usuario √© existente nos cadastrados atualmente
             {
-                existe_pac=1;//se for existe_pac recebe 1 e sai do laÁo
+                existe_pac=1;//se for existe_pac recebe 1 e sai do la√ßo
                 break;
             }
         }//Fim for
         if(existe_pac==0)
         {
             printf("Este paciente ainda nao foi cadastrado! Deseja tentar novamente?S=0/N=2");
-            scanf("%d",&existe_pac);//rebebe a escolha do usuario Sim = 0 (continua) / N„o = 2 (sai)
+            scanf("%d",&existe_pac);//rebebe a escolha do usuario Sim = 0 (continua) / N√£o = 2 (sai)
             fflush(stdin);
-            if(existe_pac == 2) //verifica se È 2 pra sair da funcao
+            if(existe_pac == 2) //verifica se √© 2 pra sair da funcao
             {
                 system("cls");
                 return main();//volta pra funcao principal *menu*
@@ -160,14 +160,14 @@ void cadastro_consulta()
         system("cls");//limpa tela
         system("pause>>null");// congela
     }
-    while(existe_pac!=1);  //(AT…) existe_pac ser diferente de 1 para sair do laÁo while
+    while(existe_pac!=1);  //(AT√â) existe_pac ser diferente de 1 para sair do la√ßo while
 
     system("cls");// limpa tela
     puts("Digite o codigo do medico:");
-    scanf("%d",&consulta[num2].cod_medico);//Entrada do codigo do medico que far· a consulta
+    scanf("%d",&consulta[num2].cod_medico);//Entrada do codigo do medico que far√° a consulta
     fflush(stdin);//Limpa buffer do teclado
 
-    //-----------LA«O PARA VERIFICAR SE O CODIGO DO MEDICO INFORMADO EXISTE NOS CADASTRADOS ATUALMENTE----------------
+    //-----------LA√áO PARA VERIFICAR SE O CODIGO DO MEDICO INFORMADO EXISTE NOS CADASTRADOS ATUALMENTE----------------
     do
     {
         //pode dar errado
@@ -178,7 +178,7 @@ void cadastro_consulta()
                 existe_med = 1;
             }	//fim if
         }	//fim for
-        if(existe_med==0) 	//O existe_med serve para verificar se foi encontrado o mÈdico informado, se sim, ele ent„o sair· do DOWhile.
+        if(existe_med==0) 	//O existe_med serve para verificar se foi encontrado o m√©dico informado, se sim, ele ent√£o sair√° do DOWhile.
         {
             puts("\nCodigo do medico invalido");
             puts("\nDigite o codigo do medico com quem sera feito a consulta: ");
@@ -187,7 +187,7 @@ void cadastro_consulta()
         }	//fim if
     }
     while(existe_med!=1); //fim do while
-    aux_cod_medico = consulta[num2].cod_medico; //Recebe codigo do medico escolhido pelo usuario(vari·vel Auxiliar)
+    aux_cod_medico = consulta[num2].cod_medico; //Recebe codigo do medico escolhido pelo usuario(vari√°vel Auxiliar)
     system("cls");//Limpa tela
 
     //-----------MENU DE ESCOLHA DE DIA PARA CONSULTA-----------------
@@ -200,7 +200,7 @@ void cadastro_consulta()
     puts("\n6- para sexta");
     scanf("%d",&consulta[num2].dia_semana);//recebe o dia de consulta desejado
     fflush(stdin);
-    if(consulta[num2].dia_semana<2 || consulta[num2].dia_semana>6) //Verifica se o dia informado È menor que 2, ou maior que 6. Se n„o for ele executa o processamento dentro do if
+    if(consulta[num2].dia_semana<2 || consulta[num2].dia_semana>6) //Verifica se o dia informado √© menor que 2, ou maior que 6. Se n√£o for ele executa o processamento dentro do if
     {
         system("cls");
         puts("\nDigite o dia da consulta");
@@ -213,13 +213,13 @@ void cadastro_consulta()
         fflush(stdin);
     }
     int dia_escolhido = consulta[num2].dia_semana;//recebe dia da semana escolhido - serve como variavel auxiliar
-    //--------------FILTRO DE DIA ESCOLHIDOS, E QUAL A«√O DEVER¡ SER TOMADA PARA CADA CASO-----------
-    //--------------DENTRO DOS IFs ELE VERIFICA DENTRO DA STRUCT DIAS OS DIAS (SEG,TER,QUA,QUI,SEX)S√O MAIORES QUE 2
-    //--------------SE SIM … MOSTRADA A MENSAGEM DE ERRO (Nao pode existir dois pacientes para o mesmo medico) E RETORNADA AO MENU.
+    //--------------FILTRO DE DIA ESCOLHIDOS, E QUAL A√á√ÉO DEVER√Å SER TOMADA PARA CADA CASO-----------
+    //--------------DENTRO DOS IFs ELE VERIFICA DENTRO DA STRUCT DIAS OS DIAS (SEG,TER,QUA,QUI,SEX)S√ÉO MAIORES QUE 2
+    //--------------SE SIM √â MOSTRADA A MENSAGEM DE ERRO (Nao pode existir dois pacientes para o mesmo medico) E RETORNADA AO MENU.
     switch(dia_escolhido)
     {
     case 2://segunda
-        if(((medico[aux_cod_medico].consulta.seg[0] != 1) && (medico[aux_cod_medico].consulta.seg[1] != 1)) || (medico[aux_cod_medico].consulta.seg[2] == 0)) //Verifica se vetor 0 e 1 È diferente de 1. E se vetor 2 È igual a 0 para uma terceira verificaÁ„o que vai ser a do erro
+        if(((medico[aux_cod_medico].consulta.seg[0] != 1) && (medico[aux_cod_medico].consulta.seg[1] != 1)) || (medico[aux_cod_medico].consulta.seg[2] == 0)) //Verifica se vetor 0 e 1 √© diferente de 1. E se vetor 2 √© igual a 0 para uma terceira verifica√ß√£o que vai ser a do erro
         {
             if(medico[aux_cod_medico].consulta.seg[0] == 0)  //Se medico[posicao].consulta.seg[0] == 0
             {
@@ -242,7 +242,7 @@ void cadastro_consulta()
         break;
 
     case 3://terca
-        if(((medico[aux_cod_medico].consulta.ter[0] != 1) && (medico[aux_cod_medico].consulta.ter[1] != 1)) || (medico[aux_cod_medico].consulta.ter[2] == 0)) //Verifica se vetor 0 e 1 È diferente de 1. E se vetor 2 È igual a 0 para uma terceira verificaÁ„o que vai ser a do erro
+        if(((medico[aux_cod_medico].consulta.ter[0] != 1) && (medico[aux_cod_medico].consulta.ter[1] != 1)) || (medico[aux_cod_medico].consulta.ter[2] == 0)) //Verifica se vetor 0 e 1 √© diferente de 1. E se vetor 2 √© igual a 0 para uma terceira verifica√ß√£o que vai ser a do erro
         {
             if(medico[aux_cod_medico].consulta.ter[0] == 0) //Se medico[posicao].consulta.ter[0] == 0
             {
@@ -265,7 +265,7 @@ void cadastro_consulta()
         break;
 
     case 4://quarta
-        if(((medico[aux_cod_medico].consulta.qua[0] != 1) && (medico[aux_cod_medico].consulta.qua[1] != 1)) || (medico[aux_cod_medico].consulta.qua[2] == 0)) //Verifica se vetor 0 e 1 È diferente de 1. E se vetor 2 È igual a 0 para uma terceira verificaÁ„o que vai ser a do erro
+        if(((medico[aux_cod_medico].consulta.qua[0] != 1) && (medico[aux_cod_medico].consulta.qua[1] != 1)) || (medico[aux_cod_medico].consulta.qua[2] == 0)) //Verifica se vetor 0 e 1 √© diferente de 1. E se vetor 2 √© igual a 0 para uma terceira verifica√ß√£o que vai ser a do erro
         {
             if(medico[aux_cod_medico].consulta.qua[0] == 0) //Se medico[posicao].consulta.qua[0] == 0
             {
@@ -288,7 +288,7 @@ void cadastro_consulta()
         break;
 
     case 5://quinta
-        if(((medico[aux_cod_medico].consulta.qui[0] != 1) && (medico[aux_cod_medico].consulta.qui[1] != 1)) || (medico[aux_cod_medico].consulta.qui[2] == 0)) //Verifica se vetor 0 e 1 È diferente de 1. E se vetor 2 È igual a 0 para uma terceira verificaÁ„o que vai ser a do erro
+        if(((medico[aux_cod_medico].consulta.qui[0] != 1) && (medico[aux_cod_medico].consulta.qui[1] != 1)) || (medico[aux_cod_medico].consulta.qui[2] == 0)) //Verifica se vetor 0 e 1 √© diferente de 1. E se vetor 2 √© igual a 0 para uma terceira verifica√ß√£o que vai ser a do erro
         {
             if(medico[aux_cod_medico].consulta.qui[0] == 0) //Se medico[posicao].consulta.qua[0] == 0
             {
@@ -311,7 +311,7 @@ void cadastro_consulta()
         break;
 
     case 6://sexta
-        if(((medico[aux_cod_medico].consulta.sex[0] != 1) && (medico[aux_cod_medico].consulta.sex[1] != 1)) || (medico[aux_cod_medico].consulta.sex[2] == 0)) //Verifica se vetor 0 e 1 È diferente de 1. E se vetor 2 È igual a 0 para uma terceira verificaÁ„o que vai ser a do erro
+        if(((medico[aux_cod_medico].consulta.sex[0] != 1) && (medico[aux_cod_medico].consulta.sex[1] != 1)) || (medico[aux_cod_medico].consulta.sex[2] == 0)) //Verifica se vetor 0 e 1 √© diferente de 1. E se vetor 2 √© igual a 0 para uma terceira verifica√ß√£o que vai ser a do erro
         {
             if(medico[aux_cod_medico].consulta.sex[0] == 0) //Se medico[posicao].consulta.qua[0] == 0
             {
@@ -332,7 +332,7 @@ void cadastro_consulta()
             return main();//retorna menu
         }//fim else
         break;
-    default://padr„o diferente dos anteriores
+    default://padr√£o diferente dos anteriores
         puts("O dia escolhido esta incorreto");
     }//fim switch
 
@@ -341,7 +341,7 @@ void cadastro_consulta()
     puts("\nDigite a hora da consulta(1-24hrs): ");
     scanf("%f",&consulta[num2].hora);//Guarda dentro do registro consulta
     fflush(stdin);//limpa buffer teclado
-    //Verifica se a hora informado est· entre 0 e 24hrs, se n„o for, n„o È executado o processamento dentro de if.
+    //Verifica se a hora informado est√° entre 0 e 24hrs, se n√£o for, n√£o √© executado o processamento dentro de if.
     do
     {
         if (consulta[num2].hora<1 || consulta[num2].hora>24)
@@ -359,7 +359,7 @@ void cadastro_consulta()
     while(continua != 0);
     system("cls");//Limpa tela
     consulta[num2].num_consulta = num2;
-    num2++;//incremento autom·tico
+    num2++;//incremento autom√°tico
     puts("\nCadastrado com sucesso");
     //entrada pra saida e retorno ao menu
     puts("\n\nTecle enter para sair...");
@@ -367,10 +367,10 @@ void cadastro_consulta()
     system("pause>>null");//congela
     system("cls");
     return main();//Volta menu
-}//Fim funÁ„o cadastrar_consulta();
+}//Fim fun√ß√£o cadastrar_consulta();
 
 //---------------------------------------------------------------------------
-//-------------FUN«√O PARA LER M…DICO E DIA DA SEMANA, E IMPRIMIR QUANTAS CONSULTAS EXISTEM PARA ESTE M…DICO, NO DIA DA SEMANA.
+//-------------FUN√á√ÉO PARA LER M√âDICO E DIA DA SEMANA, E IMPRIMIR QUANTAS CONSULTAS EXISTEM PARA ESTE M√âDICO, NO DIA DA SEMANA.
 void consulta_medico()
 {
 
@@ -378,7 +378,7 @@ void consulta_medico()
     int continua = 1;//controlador (do)
     int aux_cod_medico;//var auxiliar
 
-    //laÁo verificado para inserÁ„o de dia, nome do medico
+    //la√ßo verificado para inser√ß√£o de dia, nome do medico
     do  //REPITA
     {
         puts("\nDigite o codigo do medico: ");
@@ -393,7 +393,7 @@ void consulta_medico()
         puts("\n6- para sexta");
         scanf("%d",&dia);//Guarda dia escolhido
         fflush(stdin);//Limpa buffer
-        //Verifica se dia est· entre 1 e 6
+        //Verifica se dia est√° entre 1 e 6
         if(dia > 1 && dia <7)
         {
             //laco para comparar strings(nome do medico inserido acima, com cadastrado na consulta) + dia.
@@ -403,7 +403,7 @@ void consulta_medico()
                     cont = cont + 1;//incremento
             }//Fim for
             system("cls");//Limpa tela
-            printf("O mÈdico tem %d consulta(s) no dia %d da semana.",cont,dia);//Apresenta quantidade de consultas em tal dia
+            printf("O m√©dico tem %d consulta(s) no dia %d da semana.",cont,dia);//Apresenta quantidade de consultas em tal dia
             puts("\n\nTecle enter para sair...");//entrada pra saida e retor ao menu
             fflush(stdin);
             system("pause>>null");//congela
@@ -412,13 +412,13 @@ void consulta_medico()
         }
         else
         {
-            continua = 1;//continua no laÁo while
+            continua = 1;//continua no la√ßo while
             printf("Digite uma opcao valida.");
             system("pause>>null");//congela
             system("cls");
         }//Fim else
     }
-    while(continua = 1); //AtÈ
+    while(continua = 1); //At√©
 }
 
 //-------------------------------------------------------------------------
@@ -476,7 +476,7 @@ void consulta_dia()
 }//fechamento do void
 
 //-------------------------------------------------------------------------
-//----------FUN«√O PARA ALTERAR CADASTRO DE PACIENTES-------------
+//----------FUN√á√ÉO PARA ALTERAR CADASTRO DE PACIENTES-------------
 void altera_paciente()
 {
     int existe_pac=0;
@@ -488,25 +488,25 @@ void altera_paciente()
         fflush(stdin);//Limpa Buffer do teclado
         for (i=0; i<num; i++)   //pode dar errado
         {
-            if (aux_cod_paciente==paciente[i].cod_cliente) //Verifica se codigo informado pelo usuario È existente nos cadastrados atualmente
+            if (aux_cod_paciente==paciente[i].cod_cliente) //Verifica se codigo informado pelo usuario √© existente nos cadastrados atualmente
             {
-                existe_pac=1;//se for existe_pac recebe 1 e sai do laÁo
+                existe_pac=1;//se for existe_pac recebe 1 e sai do la√ßo
                 break;
             }
         }//Fim for
         if(existe_pac==0)
         {
             printf("Este paciente ainda nao foi cadastrado! Deseja tentar novamente?S=0/N=2");
-            scanf("%d",&existe_pac);//rebebe a escolha do usuario Sim = 0 (continua) / N„o = 2 (sai)
+            scanf("%d",&existe_pac);//rebebe a escolha do usuario Sim = 0 (continua) / N√£o = 2 (sai)
             fflush(stdin);
-            if(existe_pac == 2) //verifica se È 2 pra sair da funcao
+            if(existe_pac == 2) //verifica se √© 2 pra sair da funcao
             {
                 system("cls");
                 return main();//volta pra funcao principal *menu*
             }
         }//Fim if
     }
-    while(existe_pac!=1);  //AT… existe_pac ser diferente de 1 para sair do laÁo while
+    while(existe_pac!=1);  //AT√â existe_pac ser diferente de 1 para sair do la√ßo while
     //Mostra dados do paciente com o codigo
     system("cls");
     printf("\n Codigo: %d",paciente[aux_cod_paciente].cod_cliente); //mostra codigo paciente
@@ -534,10 +534,10 @@ void altera_paciente()
 }
 
 //-------------------------------------------------------------------------
-//-------------FUN«√O PARA ALTERAR CADASTROS DE M…DICOS--------------------
+//-------------FUN√á√ÉO PARA ALTERAR CADASTROS DE M√âDICOS--------------------
 void altera_medico()
 {
-    int existe_med=0; //variavel de verificaÁ„o de laÁo Do-While
+    int existe_med=0; //variavel de verifica√ß√£o de la√ßo Do-While
     int aux_cod_medico; //var auxilia para receber codigo digitado pelo usuario
     do  //REPETE
     {
@@ -546,25 +546,25 @@ void altera_medico()
         fflush(stdin);//Limpa Buffer do teclado
         for (i=0; i<num; i++)   //pode dar errado
         {
-            if (aux_cod_medico==medico[i].cod_medico) //Verifica se codigo informado pelo usuario È existente nos cadastrados atualmente
+            if (aux_cod_medico==medico[i].cod_medico) //Verifica se codigo informado pelo usuario √© existente nos cadastrados atualmente
             {
-                existe_med=1;//se for existe_pac recebe 1 e sai do laÁo
+                existe_med=1;//se for existe_pac recebe 1 e sai do la√ßo
                 break;
             }
         }//Fim for
         if(existe_med==0)
         {
             printf("Este medico ainda nao foi cadastrado! Deseja tentar novamente?S=0/N=2");
-            scanf("%d",&existe_med);//rebebe a escolha do usuario Sim = 0 (continua) / N„o = 2 (sai)
+            scanf("%d",&existe_med);//rebebe a escolha do usuario Sim = 0 (continua) / N√£o = 2 (sai)
             fflush(stdin);
-            if(existe_med == 2) //verifica se È 2 pra sair da funcao
+            if(existe_med == 2) //verifica se √© 2 pra sair da funcao
             {
                 system("cls");
                 return main();//volta pra funcao principal *menu*
             }
         }//Fim if
     }
-    while(existe_med!=1);  //AT… existe_pac ser diferente de 1 para sair do laÁo while
+    while(existe_med!=1);  //AT√â existe_pac ser diferente de 1 para sair do la√ßo while
     //Mostra dados do paciente com o codigo
     system("cls");
     printf("\n Codigo: %d",medico[aux_cod_medico].cod_medico); //mostra codigo do medico
@@ -591,29 +591,29 @@ void altera_medico()
 //----------------ALTERA CONSULTA CADASTRADA-----------------
 void altera_consulta()
 {
-    int continua = 1;	//Vari·vel controladora DoWhile
-    int escolha_consulta;	//recebe a primeira entrada em relaÁ„o ao numero da consulta ‡ ser alterada
-    float guarda_num_consulta; 	//Guarda o novo hor·rio ‡ ser adicionado ao registro (consulta[num_consulta].hora).
-    int num_consulta;	//Recebe a posiÁ„o [i] do laÁo FOR onde (escolha_consulta == consulta[i].num_consulta) foi encontrada.
+    int continua = 1;	//Vari√°vel controladora DoWhile
+    int escolha_consulta;	//recebe a primeira entrada em rela√ß√£o ao numero da consulta √† ser alterada
+    float guarda_num_consulta; 	//Guarda o novo hor√°rio √† ser adicionado ao registro (consulta[num_consulta].hora).
+    int num_consulta;	//Recebe a posi√ß√£o [i] do la√ßo FOR onde (escolha_consulta == consulta[i].num_consulta) foi encontrada.
     for (i=0; i<=num2; i++)
     {
-        //Mostra uma lista com todas as consultas j· criadas
+        //Mostra uma lista com todas as consultas j√° criadas
         printf("\n------------------------%da Consulta------------------------\n",i+1);
         printf("\nnumero consulta: %d | dia: %d | cod_med: %d | cod_pac: %d | hora: %.2f",consulta[i].num_consulta, consulta[i].dia_semana, consulta[i].cod_medico, consulta[i].cod_paciente, consulta[i].hora);
         system("pause>>null");
     }//fim for
     puts("\nVoce so podera alterar a hora de atendimento.");
     puts("\nQual consulta deseja alterar. 666 p/ retornar ao menu: ");
-    scanf("%d",&escolha_consulta);	//entrada do numero da consulta ‡ ser alterada.
+    scanf("%d",&escolha_consulta);	//entrada do numero da consulta √† ser alterada.
 
-    if(escolha_consulta == 666) 	//Verifica se o usu·rio decidiu sair da funÁ„o
+    if(escolha_consulta == 666) 	//Verifica se o usu√°rio decidiu sair da fun√ß√£o
     {
         return main();	//retorna menu
     }
     //---------------TROCA DE HORA--------------------
     for (i=0; i<=num2; i++)
     {
-        if(escolha_consulta == consulta[i].num_consulta) //Se numero de consulta escolhida for igual ‡ consulta[posiÁ„o].num
+        if(escolha_consulta == consulta[i].num_consulta) //Se numero de consulta escolhida for igual √† consulta[posi√ß√£o].num
         {
 
             num_consulta = i;
@@ -634,7 +634,7 @@ void altera_consulta()
                     consulta[num_consulta].hora = guarda_num_consulta;
                 }//fim else
             }
-            while(continua != 0);	//AT… que vari·vel continua seja diferente de 0.
+            while(continua != 0);	//AT√â que vari√°vel continua seja diferente de 0.
             printf("\nAlterado com sucesso!\n");
             //entrada pra saida e retorno ao menu
             puts("\n\nTecle enter para sair...");
@@ -648,11 +648,11 @@ void altera_consulta()
 }//fim alterar consulta
 
 //--------------------------------------------------------------------------
-//---------------MENU DE NAVEGA«√O-------------
+//---------------MENU DE NAVEGA√á√ÉO-------------
 int menu()
 {
     system("cls");
-    int escolha;//Var decis„o de opÁ„o no menu
+    int escolha;//Var decis√£o de op√ß√£o no menu
     puts("-----------------------------BEM VINDO--------------------------------");
     puts("O que voce deseja fazer?");
     puts("1- Para cadastrar novo paciente");
@@ -694,7 +694,7 @@ main ()
             cadastro_consulta();
             system("pause>>null");
             break;
-        case 4: //Consulta Consultas por mÈdico
+        case 4: //Consulta Consultas por m√©dico
             system("cls");
             consulta_dia();
             system("pause>>null");
@@ -727,18 +727,18 @@ main ()
                 printf("nome: %s",paciente[i].nome);	//nome paciente
                 printf("\nMedicos %d: ,", medico[i].cod_medico); //codigo medico
                 printf("nome: %s", medico[i].nome);	 //nome medico
-                printf("\nSegunda: c1=%d | c2=%d",medico[i].consulta.seg[i],medico[i].consulta.seg[i+1]); //vetor segunda para consulta atÈ 2
-                printf("\nTerca: c1=%d | c2=%d",medico[i].consulta.ter[i],medico[i].consulta.ter[i+1]);//vetor terca para consulta atÈ 2
-                printf("\nQuarta: c1=%d | c2=%d",medico[i].consulta.qua[i],medico[i].consulta.qua[i+1]);//vetor quarta para consulta atÈ 2
-                printf("\nQuinta: c1=%d | c2=%d",medico[i].consulta.qui[i],medico[i].consulta.qui[i+1]);//vetor quinta para consulta atÈ 2
-                printf("\nSexta: c1=%d | c2=%d",medico[i].consulta.sex[i],medico[i].consulta.sex[i+1]);//vetor sexta para consulta atÈ 2
-                //Lista de consultas atÈ 3
+                printf("\nSegunda: c1=%d | c2=%d",medico[i].consulta.seg[i],medico[i].consulta.seg[i+1]); //vetor segunda para consulta at√© 2
+                printf("\nTerca: c1=%d | c2=%d",medico[i].consulta.ter[i],medico[i].consulta.ter[i+1]);//vetor terca para consulta at√© 2
+                printf("\nQuarta: c1=%d | c2=%d",medico[i].consulta.qua[i],medico[i].consulta.qua[i+1]);//vetor quarta para consulta at√© 2
+                printf("\nQuinta: c1=%d | c2=%d",medico[i].consulta.qui[i],medico[i].consulta.qui[i+1]);//vetor quinta para consulta at√© 2
+                printf("\nSexta: c1=%d | c2=%d",medico[i].consulta.sex[i],medico[i].consulta.sex[i+1]);//vetor sexta para consulta at√© 2
+                //Lista de consultas at√© 3
                 printf("\n------------------------Consultas------------------------\n");
                 printf("\nnumero consulta: %d | dia: %d | cod_med: %d | cod_pac: %d | hora: %.2f",consulta[i].num_consulta, consulta[i].dia_semana, consulta[i].cod_medico, consulta[i].cod_paciente, consulta[i].hora);
                 system("pause>>null");
             }
             break;
-        default://PADR√O DE OP«√O INV¡LIDA
+        default://PADR√ÉO DE OP√á√ÉO INV√ÅLIDA
             system("cls");
             puts("Digite uma opcao valida!!");
             puts("\n\nTecle enter para sair...");
