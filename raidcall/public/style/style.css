@@ -1,0 +1,26 @@
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+div#account{
+	width: 400px;
+	margin: 0 auto;
+	border: solid red;
+}
+
+
+div#form_account{
+	width: 200px;
+	margin: 0 auto;
+	border: solid red;
+}
+
+.form_style{
+	margin-left: 15px;
+}
+.txt_style{
+	margin-left: 15px;
+	
+}
