@@ -1,0 +1,59 @@
+/*
+  Developer: Wylkson M.Barbosa 
+  License: Free using MIT
+  Created: 2019-11-27 21:04:00.000 (Manaus - AM)
+*/
+
+/* Creating Array with details Child*/
+
+const childTreeList = []
+
+const childTreeAdd = (childName, motherChild, fatherChild) => {
+    childTreeList.push(
+    {
+      'childName': childName,
+      'parents':{
+        'motherChild': motherChild,
+        'fatherChild': fatherChild
+      }
+    })
+}
+
+const findChild = (childName) => {
+  return childTreeList.find(x=>x.childName == childName).parents || null
+}
+
+/* Check Genealogy of childs */
+
+const haveSameMother = (childOne, childTwo) => {
+  return childOne.motherChild == childTwo.motherChild 
+}
+
+const haveSameFather = (childOne, childTwo) => {
+  return childOne.fatherChild == childTwo.fatherChild 
+}
+
+const areMiddleBrothers = (childOne, childTwo) => {
+  if(haveSameMother(childOne, childTwo) && !haveSameFather(childOne, childTwo))
+    return true
+  else if(!haveSameMother(childOne, childTwo) && haveSameFather(childOne, childTwo))
+    return true
+  else
+    return false
+}
+
+/* Main Executions */
+
+childTreeAdd("Wylkson", "Mae", "Pai")
+childTreeAdd("William", "Mae", "PaiDiferente")
+
+const childOne = findChild('Wylkson')
+const childTwo = findChild('William')
+
+const resultSameMother = haveSameMother(childOne,childTwo)
+const resultSameFather = haveSameFather(childOne,childTwo)
+const resultAreMiddleBrothers = areMiddleBrothers(childOne,childTwo)
+
+console.log('resultSameMother: ' + resultSameMother)
+console.log('resultSameFather: ' + resultSameFather)
+console.log('resultAreMiddleBrothers: ' + resultAreMiddleBrothers)
